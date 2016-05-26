@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <script src="bower_components/lodash/lodash.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="CSS/product.css">
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="bower_components/notes/notes.js"></script>
+        <script type="text/javascript" src="js/lib/spin.min.js"></script>
+        <script type="text/javascript" src="js/view/pacifier.js"></script>
+        <script type="text/javascript" src="js/products.js"></script>
+        <title>Product Project</title>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <nav>
+                <h1><strong><center>* Welcome to Unicorn Phones  *</center></strong></h1>
+                
+                <input type="text" name="first-input" placeholder="Unicorn Phones LLC." required/>
+                
+                <div class="dropdown">
+                     <button onclick="myFunction()" class="dropbtn">Menu</button>
+                     
+                     <div id="myDropdown" class="dropdown-content">
+                     </div>
+                </div>
+                <script>
+                    /* When the user clicks on the button, 
+                    toggle between hiding and showing the dropdown content */
+                    function myFunction() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
+                    
+                    // Close the dropdown menu if the user clicks outside of it
+                    window.onclick = function(event) {
+                      if (!event.target.matches('.dropbtn')) {
+                    
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                          var openDropdown = dropdowns[i];
+                          if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                          }
+                        }
+                      }
+                    }
+                </script>
+            </nav>
+            <main>
+              <section id='products'></section> 
+            </main>
+        </div>
+        <script>
+              function showAll(products) {
+                $('div.desc').parent().parent().show();
+            }
+        </script>
+                <main>
+                <ul id="products"></ul>
+            </main>
+        
+    </body>
+</html>
